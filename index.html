@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>더샵 관저아르떼 | 공식 분양 홈페이지</title>
+  <meta name="description" content="더샵 관저아르떼 공식 분양 홈페이지. 대전 서구 관저동 951세대. 59·84·104·119㎡. 분양문의 1599-8766.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0c1b30;
+      --navy2:#0a1525;
+      --navy3:#071020;
+      --mid:#132240;
+      --panel:#182d4a;
+      --gold:#c9a86c;
+      --gold2:#e8d5a0;
+      --white:#ffffff;
+      --gray:#8a9ab5;
+      --light:#f0f4f8;
+      --ease-out:cubic-bezier(.16,1,.3,1);
+      --spring:cubic-bezier(.34,1.56,.64,1);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Noto Sans KR',sans-serif;background:var(--navy);color:var(--white);line-height:1.7;overflow-x:hidden;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:72px;background:rgba(10,21,37,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,108,.12);}
+    .nav-logo{display:flex;flex-direction:column;line-height:1.2;}
+    .nav-logo strong{font-size:18px;font-weight:900;color:var(--white);letter-spacing:.04em;}
+    .nav-logo span{font-size:11px;color:var(--gold);font-weight:500;letter-spacing:.1em;}
+    .nav-links{display:flex;gap:32px;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;transition:color .2s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-tel{background:var(--gold);color:var(--navy);font-weight:900;font-size:16px;padding:10px 24px;border-radius:999px;text-decoration:none;letter-spacing:.05em;transition:background .2s;}
+    .nav-tel:hover{background:var(--gold2);}
+
+    /* HERO */
+    #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:72px 0 0;}
+    .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.7;}
+    #hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(8,14,28,.72) 0%,rgba(10,20,40,.45) 55%,rgba(8,16,32,.25) 100%);}
+    .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;width:100%;}
+    .hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.18em;padding:6px 18px;margin-bottom:28px;}
+    .hero-eyebrow{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.14em;margin-bottom:14px;}
+    .hero-title{font-size:clamp(38px,5.5vw,72px);font-weight:900;line-height:1.15;letter-spacing:-.01em;margin-bottom:18px;}
+    .hero-title em{color:var(--gold);font-style:normal;}
+    .hero-sub{font-size:clamp(15px,2vw,20px);color:rgba(255,255,255,.72);font-weight:300;line-height:1.8;margin-bottom:40px;max-width:540px;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:900;font-size:15px;padding:16px 38px;border-radius:4px;text-decoration:none;letter-spacing:.06em;transition:all .2s;}
+    .btn-primary:hover{background:var(--gold2);}
+    .btn-outline{border:1px solid rgba(255,255,255,.4);color:var(--white);font-weight:600;font-size:15px;padding:16px 38px;border-radius:4px;text-decoration:none;letter-spacing:.06em;transition:all .2s;}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .hero-scroll{position:relative;z-index:2;text-align:center;padding:40px 0 60px;opacity:.5;font-size:12px;letter-spacing:.1em;color:var(--white);}
+    .hero-info-bar{position:relative;z-index:2;background:rgba(12,27,48,.85);border-top:1px solid rgba(201,168,108,.2);backdrop-filter:blur(8px);}
+    .hero-info-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+    .hero-info-item{padding:24px 28px;border-right:1px solid rgba(201,168,108,.15);text-align:center;}
+    .hero-info-item:last-child{border-right:none;}
+    .hero-info-label{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.14em;margin-bottom:6px;}
+    .hero-info-value{font-size:14px;font-weight:700;color:var(--white);white-space:nowrap;}
+
+    /* SECTIONS */
+    section{padding:100px 0;}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+    .sec-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold);border:1px solid rgba(201,168,108,.4);padding:5px 14px;margin-bottom:20px;}
+    .sec-title{font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.2;letter-spacing:-.01em;margin-bottom:16px;}
+    .sec-desc{font-size:16px;color:#556;line-height:1.9;max-width:600px;}
+    .gold{color:var(--gold);}
+    .divider{width:48px;height:2px;background:var(--gold);margin:28px 0;}
+
+    /* CALENDAR */
+    #calendar{background:#f2f5f9;}
+    .cal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:60px;}
+    .cal-item{background:#fff;padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s var(--ease-out);border:1px solid #e0e6ef;}
+    .cal-item:hover{transform:translateY(-4px);}
+    .cal-item::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease-out);}
+    .cal-item:hover::before{transform:scaleX(1);}
+    .cal-num{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:12px;}
+    .cal-event{font-size:16px;font-weight:800;color:#0c1b30;margin-bottom:8px;word-break:keep-all;}
+    .cal-date{font-size:13px;color:#667;}
+    .cal-highlight{background:var(--gold);}
+    .cal-highlight .cal-event,.cal-highlight .cal-date,.cal-highlight .cal-num{color:var(--navy);}
+
+    /* PREMIUM */
+    #premium{background:var(--navy3);}
+    .premium-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:60px;}
+    .premium-card{position:relative;overflow:hidden;aspect-ratio:16/9;cursor:pointer;}
+    .premium-card:first-child{grid-row:span 2;aspect-ratio:auto;}
+    .premium-card-bg{position:absolute;inset:0;background:var(--panel);transition:transform .6s var(--ease-out);}
+    .premium-card:hover .premium-card-bg{transform:scale(1.04);}
+    .premium-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;transition:opacity .4s,transform .6s var(--ease-out);}
+    .premium-card:hover .premium-card-img{opacity:.75;transform:scale(1.04);}
+    .premium-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(8,14,28,.88) 100%);}
+    .premium-card-body{position:absolute;bottom:0;left:0;right:0;padding:32px;}
+    .premium-tag{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:10px;}
+    .premium-name{font-size:22px;font-weight:900;color:var(--white);margin-bottom:8px;line-height:1.3;}
+    .premium-text{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;word-break:keep-all;}
+
+    /* OVERVIEW */
+    #overview{background:#eef1f7;} #overview .sec-title,#overview .divider+p,#units .sec-title{color:#0c1b30;} #overview .sec-badge,#units .sec-badge{color:#8a6a2a;border-color:rgba(138,106,42,.4);}
+    .overview-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px;}
+    .overview-img{border-radius:4px;overflow:hidden;aspect-ratio:4/3;background:var(--panel);}
+    .overview-img img{width:100%;height:100%;object-fit:cover;}
+    .overview-table{width:100%;border-collapse:collapse;}
+    .overview-table tr{border-bottom:1px solid #dde3ee;}
+    .overview-table tr:first-child{border-top:1px solid rgba(185,146,42,.4);}
+    .overview-table th{width:38%;padding:16px 0;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.08em;text-align:left;vertical-align:top;}
+    .overview-table td{padding:16px 0;font-size:14px;color:#334;line-height:1.8;word-break:keep-all;}
+
+    /* SPECS / UNIT */
+    #units{background:#ffffff;padding:100px 0;}
+    .units-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:48px 0 40px;}
+    .unit-tab{background:#f5f0e8;border:1px solid rgba(185,146,42,.3);color:#8a6020;border-radius:999px;padding:14px 32px;font-weight:800;font-size:15px;cursor:pointer;transition:all .2s;letter-spacing:.04em;}
+    .unit-tab.active,.unit-tab:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .unit-panel{display:none;}
+    .unit-panel.active{display:grid;grid-template-columns:3fr 2fr;gap:60px;align-items:start;}
+    .unit-img{background:#f8f9fc;border-radius:12px;overflow:hidden;border:1px solid #e4e8f0;}
+    .unit-img img{width:100%;height:auto;object-fit:contain;display:block;}
+    .unit-size{font-size:clamp(56px,7vw,96px);font-weight:900;color:#b8922a;line-height:1;}
+    .unit-size span{font-size:.4em;font-weight:400;color:var(--gray);}
+    .unit-count{font-size:15px;color:#667;margin:10px 0 32px;letter-spacing:.02em;}
+    .unit-features{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+    .unit-features li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#334;line-height:1.7;}
+    .unit-features li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
+
+    /* CONTACT */
+    #contact{background:var(--light);padding:80px 20px;}
+    .contact-wrap{max-width:600px;margin:0 auto;}
+    .contact-title{text-align:center;color:#0c1b30;font-size:26px;font-weight:900;margin-bottom:8px;}
+    .contact-sub{text-align:center;color:#667;margin-bottom:32px;font-size:15px;}
+    .consult-form{background:#fff;border-radius:20px;padding:36px;box-shadow:0 4px 32px rgba(0,0,0,.1);}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .form-grid>div{min-width:0;}
+    .form-label{display:block;font-weight:700;margin-bottom:6px;color:#0c1b30;font-size:14px;}
+    .form-input{width:100%;border:1px solid #ddd;border-radius:10px;padding:13px;font:inherit;font-size:14px;color:#333;transition:border-color .2s;}
+    .form-input:focus{outline:none;border-color:#c9a86c;box-shadow:0 0 0 3px rgba(201,168,108,.15);}
+    .form-select{width:100%;border:1px solid #ddd;border-radius:10px;padding:13px;font:inherit;font-size:14px;color:#333;background:#f8f8f8;}
+    .form-textarea{width:100%;border:1px solid #ddd;border-radius:10px;padding:13px;font:inherit;font-size:14px;resize:vertical;}
+    .form-textarea:focus{outline:none;border-color:#c9a86c;}
+    .form-check{display:flex;gap:10px;align-items:flex-start;margin:16px 0 24px;font-size:13px;color:#666;}
+    .form-submit{width:100%;background:#0c1b30;color:#fff;border:none;border-radius:12px;padding:17px;font-size:16px;font-weight:900;cursor:pointer;letter-spacing:.04em;transition:background .2s;}
+    .form-submit:hover{background:#132240;}
+    .form-status{margin-top:12px;font-weight:bold;text-align:center;font-size:14px;}
+
+    /* FOOTER */
+    footer{background:var(--navy3);border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 36px;text-align:center;}
+    footer p{font-size:12px;color:rgba(255,255,255,.35);line-height:2.2;}
+    footer strong{color:rgba(255,255,255,.55);}
+
+    /* FLOAT */
+    .side-float{position:fixed;right:28px;bottom:28px;z-index:90;display:flex;flex-direction:column;gap:10px;}
+    .float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-decoration:none;text-align:center;line-height:1.3;transition:transform .2s,box-shadow .2s;}
+    .float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.4);}
+    .float-tel{background:var(--gold);color:var(--navy);}
+    .float-form{background:var(--navy2);color:var(--gold);border:1px solid var(--gold);}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      nav{padding:0 20px;}
+      .nav-links{display:none;}
+      .wrap{padding:0 24px;}
+      section{padding:70px 0;}
+      #hero{padding:72px 0 0;}
+      .hero-inner{padding:60px 24px 40px;}
+      .hero-info-inner{padding:0 12px;grid-template-columns:repeat(2,1fr);}
+      .hero-info-item{padding:18px 12px;}
+      .premium-grid{grid-template-columns:1fr;}
+      .premium-card:first-child{grid-row:auto;aspect-ratio:16/9;}
+      .overview-inner{grid-template-columns:1fr;gap:40px;}
+      .unit-panel.active{grid-template-columns:1fr;}
+      .form-grid{grid-template-columns:1fr;}
+      .side-float{right:16px;bottom:16px;}
+      footer{padding:40px 24px 28px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <strong>THE SHARP</strong>
+    <span>관저아르떼</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#premium">프리미엄</a></li>
+    <li><a href="#overview">사업개요</a></li>
+    <li><a href="#units">평형안내</a></li>
+    <li><a href="#siteplan">단지배치도</a></li>
+    <li><a href="#contact">상담신청</a></li>
+  </ul>
+  <a href="tel:15998766" class="nav-tel">1599-8766</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-bg-img" src="assets/hero-bg.jpg" alt="더샵 관저아르떼 조감도">
+  <div class="hero-inner">
+    <div class="hero-badge">GRAND OPEN · 선착순 동호지정 계약중</div>
+    <p class="hero-eyebrow">POSCO E&amp;C THE SHARP · 대전광역시 서구 관저동</p>
+    <h1 class="hero-title">완전히 형성된<br><em>삶의 시작</em></h1>
+    <p class="hero-sub">오랜 기다림 끝에<br>더샵 관저아르떼가 완성되었습니다.</p>
+    <div class="hero-btns">
+      <a href="tel:15998766" class="btn-primary">☎ 1599-8766 전화상담</a>
+      <a href="#contact" class="btn-outline">관심고객 등록</a>
+    </div>
+  </div>
+  <div class="hero-info-bar">
+    <div class="hero-info-inner">
+      <div class="hero-info-item">
+        <div class="hero-info-label">위치</div>
+        <div class="hero-info-value" style="white-space:nowrap;">대전 서구 관저동</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-label">총 세대수</div>
+        <div class="hero-info-value">951세대</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-label">평형</div>
+        <div class="hero-info-value" style="white-space:nowrap;">59㎡ · 84㎡ · 104㎡ · 119㎡</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-label">분양문의</div>
+        <div class="hero-info-value">1599-8766</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PREMIUM -->
+<section id="premium">
+  <div class="wrap">
+    <div class="sec-badge">PREMIUM</div>
+    <h2 class="sec-title">더샵만의 <em class="gold">프리미엄</em></h2>
+    <div class="divider"></div>
+    <p class="sec-desc">교육·생활·교통·커뮤니티·평면까지, 삶의 모든 조건을 완성한 더샵 관저아르떼.</p>
+  </div>
+  <div style="max-width:1200px;margin:48px auto 0;padding:0 48px;">
+    <div class="premium-grid">
+      <div class="premium-card">
+        <div class="premium-card-bg"></div>
+        <img class="premium-card-img" src="assets/premium-edu.jpg" alt="스마트 교육">
+        <div class="premium-card-overlay"></div>
+        <div class="premium-card-body">
+          <div class="premium-tag">SMART EDU</div>
+          <div class="premium-name">교육 이사,<br>이제 끝내세요</div>
+          <div class="premium-text">도보 거리 초·중·고 밀집, 인접 학원가<br>단지 바로 옆 제3시립도서관(계획)</div>
+        </div>
+      </div>
+      <div class="premium-card">
+        <div class="premium-card-bg"></div>
+        <img class="premium-card-img" src="assets/premium-life.jpg" alt="슬세권">
+        <div class="premium-card-overlay"></div>
+        <div class="premium-card-body">
+          <div class="premium-tag">ONE STOP LIFE</div>
+          <div class="premium-name">병원도 카페도<br>집 앞, 슬세권 인정</div>
+          <div class="premium-text">병·의원, 학원, 식당, 카페, 어린이공원까지<br>집 앞에서 모두 누릴 수 있으니까</div>
+        </div>
+      </div>
+      <div class="premium-card">
+        <div class="premium-card-bg"></div>
+        <img class="premium-card-img" src="assets/premium-traffic.jpg" alt="교통">
+        <div class="premium-card-overlay"></div>
+        <div class="premium-card-body">
+          <div class="premium-tag">FAST TRAFFIC</div>
+          <div class="premium-name">트램타고 도심가고<br>서대전IC 타고 어디든</div>
+          <div class="premium-text">진잠네거리역 트램 2호선(2028년 개통 예정)<br>서대전IC·도안대로 시내외 어디든 바로</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px;">
+      <div class="premium-card" style="aspect-ratio:16/7;">
+        <div class="premium-card-bg"></div>
+        <img class="premium-card-img" src="assets/premium-community.jpg" alt="커뮤니티">
+        <div class="premium-card-overlay"></div>
+        <div class="premium-card-body">
+          <div class="premium-tag">WIDE COMMUNITY</div>
+          <div class="premium-name">세대당 1.67대<br>넉넉한 커뮤니티</div>
+          <div class="premium-text">다목적체육관·골프연습장·탁구장·도서관·독서실<br>의료인 상주 헬스케어 라운지(1년 무상)</div>
+        </div>
+      </div>
+      <div class="premium-card" style="aspect-ratio:16/7;">
+        <div class="premium-card-bg"></div>
+        <img class="premium-card-img" src="assets/premium-space.jpg" alt="프리미엄 평면">
+        <div class="premium-card-overlay"></div>
+        <div class="premium-card-body">
+          <div class="premium-tag">PREMIUM SPACE</div>
+          <div class="premium-name">4~4.5베이 판상형<br>넓게 사세요</div>
+          <div class="premium-text">알파룸·올인원 드레스룸·광폭 거실 와이드 리빙<br>중대형 위주 특화 평면</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-badge">PROJECT OVERVIEW</div>
+    <h2 class="sec-title">사업 개요</h2>
+    <div class="divider"></div>
+    <div class="overview-inner">
+      <div style="border-radius:4px;overflow:hidden;">
+        <img src="assets/overview-bird.jpg" alt="조감도" style="width:100%;border-radius:4px;">
+      </div>
+      <div>
+        <table class="overview-table">
+          <tr><th>사업명</th><td>더샵 관저아르떼</td></tr>
+          <tr><th>위치</th><td>대전광역시 서구 관저동 1988번지</td></tr>
+          <tr><th>시공사</th><td>포스코이앤씨</td></tr>
+          <tr><th>총 세대수</th><td>951세대</td></tr>
+          <tr><th>세대 구성</th><td>59㎡ A·B / 84㎡ A·B / 104㎡ A / 119㎡ A</td></tr>
+          <tr><th>건축 규모</th><td>지하 2층 ~ 지상 최고 29층</td></tr>
+          <tr><th>주차</th><td>세대당 1.67대</td></tr>
+          <tr><th>견본주택</th><td>대전광역시 서구 관저동 1747번지</td></tr>
+          <tr><th>분양문의</th><td>1599-8766</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNITS -->
+<section id="units">
+  <div class="wrap">
+    <div class="sec-badge">UNIT PLAN</div>
+    <h2 class="sec-title">평형 안내</h2>
+    <div class="divider"></div>
+    <div class="units-tabs">
+      <button class="unit-tab active" onclick="switchUnit('59a',this)">59㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('59b',this)">59㎡ B</button>
+      <button class="unit-tab" onclick="switchUnit('84a',this)">84㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('84b',this)">84㎡ B</button>
+      <button class="unit-tab" onclick="switchUnit('104a',this)">104㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('119a',this)">119㎡ A</button>
+    </div>
+    <div id="p-59a" class="unit-panel active">
+      <div class="unit-img"><img src="assets/plan-59a.jpg" alt="59㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">59<span>㎡ A</span></div>
+        <div class="unit-count">47세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 1개</li>
+          <li>4베이 판상형 구조</li>
+          <li>드레스룸 및 알파룸 제공</li>
+          <li>광폭 거실 와이드 리빙</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-59b" class="unit-panel">
+      <div class="unit-img"><img src="assets/plan-59b.jpg" alt="59㎡ B 평면도"></div>
+      <div>
+        <div class="unit-size">59<span>㎡ B</span></div>
+        <div class="unit-count">96세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 1개</li>
+          <li>4베이 판상형 구조</li>
+          <li>드레스룸 및 팬트리</li>
+          <li>광폭 거실 와이드 리빙</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-84a" class="unit-panel">
+      <div class="unit-img"><img src="assets/plan-84a.jpg" alt="84㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">84<span>㎡ A</span></div>
+        <div class="unit-count">235세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 2개</li>
+          <li>4.5베이 판상형 구조</li>
+          <li>알파룸 및 올인원 드레스룸</li>
+          <li>분리형 세탁실·팬트리</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-84b" class="unit-panel">
+      <div class="unit-img"><img src="assets/plan-84b.jpg" alt="84㎡ B 평면도"></div>
+      <div>
+        <div class="unit-size">84<span>㎡ B</span></div>
+        <div class="unit-count">215세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 2개</li>
+          <li>4베이 판상형 구조</li>
+          <li>알파룸 및 드레스룸</li>
+          <li>와이드 주방 아일랜드</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-104a" class="unit-panel">
+      <div class="unit-img"><img src="assets/plan-104a.jpg" alt="104㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">104<span>㎡ A</span></div>
+        <div class="unit-count">287세대</div>
+        <ul class="unit-features">
+          <li>방 4개 / 욕실 2개</li>
+          <li>4.5베이 판상형 구조</li>
+          <li>알파룸·드레스룸·팬트리</li>
+          <li>독립 세탁실·서재 공간</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-119a" class="unit-panel">
+      <div class="unit-img"><img src="assets/plan-119a.jpg" alt="119㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">119<span>㎡ A</span></div>
+        <div class="unit-count">71세대</div>
+        <ul class="unit-features">
+          <li>방 4개 / 욕실 2개</li>
+          <li>4.5베이 판상형 프리미엄</li>
+          <li>올인원 드레스룸·대형 팬트리</li>
+          <li>넓은 거실·안방 특화 설계</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SITEPLAN -->
+<section id="siteplan" style="background:#f2f5f9;padding:100px 0;">
+  <div class="wrap">
+    <div class="sec-badge" style="color:#8a6a2a;border-color:rgba(138,106,42,.4);">SITE PLAN</div>
+    <h2 class="sec-title" style="color:#0c1b30;">단지 배치도</h2>
+    <div class="divider"></div>
+    <p class="sec-desc" style="color:#556;">301~309동, 총 951세대. B1F EDU/PUBLIC ZONE · B2F SPORTS ZONE 포함.</p>
+    <div style="background:#fff;border-radius:20px;padding:32px;margin-top:48px;box-shadow:0 20px 60px rgba(0,0,0,.15);">
+      <img src="assets/siteplan.jpg" alt="단지배치도" style="width:100%;border-radius:12px;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- DONG LAYOUT -->
+<section id="donglayout" style="background:#eef1f7;padding:100px 0;">
+  <div class="wrap">
+    <div class="sec-badge" style="color:#8a6a2a;border-color:rgba(138,106,42,.4);">UNIT LAYOUT</div>
+    <h2 class="sec-title" style="color:#0c1b30;">동호수 배치도</h2>
+    <div class="divider"></div>
+    <p class="sec-desc" style="color:#556;">301동~309동 전 세대 호수 배치. 타입별 색상으로 확인하세요.</p>
+    <div style="background:#fff;border-radius:20px;padding:32px;margin-top:48px;box-shadow:0 20px 60px rgba(0,0,0,.15);overflow-x:auto;">
+      <img src="assets/dong-layout.jpg" alt="동호수배치도" style="width:100%;min-width:800px;border-radius:12px;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#f0f4f8;padding:80px 20px;">
+  <div class="contact-wrap">
+    <h2 class="contact-title">방문예약 / 상담신청</h2>
+    <p class="contact-sub">궁금하신 사항을 남겨주시면 담당자가 연락드립니다.</p>
+    <form class="consult-form" data-project="더샵 관저아르떼 2">
+      <div class="form-grid">
+        <div>
+          <label class="form-label">이름 *</label>
+          <input type="text" name="name" required placeholder="성함" class="form-input">
+        </div>
+        <div>
+          <label class="form-label">연락처 *</label>
+          <input type="tel" name="phone" required placeholder="010-0000-0000" class="form-input">
+        </div>
+        <div>
+          <label class="form-label">관심 평형</label>
+          <select name="type" class="form-input form-select">
+            <option value="">선택해주세요</option>
+            <option>59㎡ A (47세대)</option>
+            <option>59㎡ B (96세대)</option>
+            <option>84㎡ A (235세대)</option>
+            <option>84㎡ B (215세대)</option>
+            <option>104㎡ A (287세대)</option>
+            <option>119㎡ A (71세대)</option>
+            <option>상담 후 결정</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">방문 희망일</label>
+          <input type="date" name="date" style="width:100%;border:1px solid #ddd;border-radius:10px;padding:13px;font:inherit;font-size:14px;color:#333;background:#f8f8f8;-webkit-appearance:none;appearance:none;cursor:pointer;box-sizing:border-box;">
+        </div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label class="form-label">문의 내용</label>
+        <textarea name="message" rows="4" placeholder="문의 내용을 입력해주세요." class="form-input" style="resize:vertical;"></textarea>
+      </div>
+      <label class="form-check">
+        <input type="checkbox" required style="margin-top:3px;">
+        <span>상담 안내를 위한 개인정보 수집 및 이용에 동의합니다. (성명, 연락처 / 분양완료 시까지)</span>
+      </label>
+      <button type="submit" class="form-submit">관심고객 등록</button>
+      <div class="form-status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong>더샵 관저아르떼</strong><br>
+    시공 : 포스코이앤씨(주) &nbsp;|&nbsp; 위치 : 대전광역시 서구 관저동 1988번지<br>
+    견본주택 : 대전광역시 서구 관저동 1747번지 &nbsp;|&nbsp; 분양문의 : 1599-8766
+  </p>
+  <p style="margin-top:16px;" class="disclaimer">
+    ※ 본 사이트에 사용된 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.<br>
+    ※ 본 사이트는 편집 과정상 오류가 있을 수 있으니 자세한 사항은 견본주택으로 문의해 주시기 바랍니다.<br>
+    © 2026 더샵 관저아르떼 ALL RIGHTS RESERVED.
+  </p>
+  <p style="opacity:.6;font-size:13px;margin-top:12px;">광고주 : 와플스튜디오 &nbsp;|&nbsp; 대표 : 김도윤 &nbsp;|&nbsp; 사업자등록번호 : 622-10-15689</p>
+</footer>
+
+<!-- FLOAT -->
+<div class="side-float">
+  <a href="tel:15998766" class="float-btn float-tel">전화<br>상담</a>
+  <a href="#contact" class="float-btn float-form">관심<br>등록</a>
+</div>
+
+<script>
+function switchUnit(id, el) {
+  document.querySelectorAll('.unit-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.unit-tab').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('p-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// Form submit
+(function(){
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzXiCO-C1RmUXb96X-Cx8bluQzdhWhGZDrT5ECLGosPDD4_sX8irZmu4pZ3veovgEOa/exec';
+  document.querySelectorAll('.consult-form').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var status = form.querySelector('.form-status');
+      var btn = form.querySelector('.form-submit');
+      btn.disabled = true;
+      btn.textContent = '전송 중...';
+      status.style.color = '#666';
+      status.textContent = '';
+      var fd = new FormData(form);
+      fd.append('project', form.dataset.project || '더샵 관저아르떼');
+      fd.append('timestamp', new Date().toLocaleString('ko-KR'));
+      fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:fd})
+        .then(function(){
+          status.style.color = '#2e7d32';
+          status.textContent = '✓ 접수되었습니다. 빠른 시일 내 연락드리겠습니다.';
+          form.reset();
+          var el = document.getElementById('date-display');
+          if(el){el.textContent='날짜를 선택해주세요';el.style.color='#aaa';}
+          btn.textContent = '관심고객 등록';
+          btn.disabled = false;
+        })
+        .catch(function(){
+          status.style.color = '#c0392b';
+          status.textContent = '전송 중 오류가 발생했습니다. 전화로 문의해 주세요.';
+          btn.textContent = '관심고객 등록';
+          btn.disabled = false;
+        });
+    });
+  });
+})();
+</script>
+</body>
+</html>
+
+<div style="padding:20px;font-size:13px;opacity:.6;text-align:center;color:#fff;">광고주 : (주)다호 &nbsp;|&nbsp; 사업자등록번호 : 829-88-02090</div>
