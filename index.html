@@ -532,7 +532,7 @@ function switchUnit(id, el) {
       status.style.color = '#666';
       status.textContent = '';
       var fd = new FormData(form);
-      fd.append('project', form.dataset.project || '더샵 관저아르떼');
+      fd.append('project', form.dataset.project || '더샵 관저아르떼 2');
       fd.append('timestamp', new Date().toLocaleString('ko-KR'));
       fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:fd})
         .then(function(){
