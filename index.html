@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>더샵 관저아르떼 | 공식 분양 홈페이지</title>
-  <meta name="description" content="더샵 관저아르떼 공식 분양 홈페이지. 대전 서구 관저동 951세대. 104·119㎡. 분양문의 1599-8766.">
+  <meta name="description" content="더샵 관저아르떼 공식 분양 홈페이지. 대전 서구 관저동 951세대. 59·84·104·119㎡. 분양문의 1599-8766.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
@@ -229,7 +229,7 @@
       </div>
       <div class="hero-info-item">
         <div class="hero-info-label">평형</div>
-        <div class="hero-info-value" style="white-space:nowrap;">104㎡ · 119㎡</div>
+        <div class="hero-info-value" style="white-space:nowrap;">59㎡ · 84㎡ · 104㎡ · 119㎡</div>
       </div>
       <div class="hero-info-item">
         <div class="hero-info-label">분양문의</div>
@@ -322,7 +322,7 @@
           <tr><th>위치</th><td>대전광역시 서구 관저동 1988번지</td></tr>
           <tr><th>시공사</th><td>포스코이앤씨</td></tr>
           <tr><th>총 세대수</th><td>951세대</td></tr>
-          <tr><th>세대 구성</th><td>104㎡ A / 119㎡ A</td></tr>
+          <tr><th>세대 구성</th><td>59㎡ A·B / 84㎡ A·B / 104㎡ A / 119㎡ A</td></tr>
           <tr><th>건축 규모</th><td>지하 2층 ~ 지상 최고 29층</td></tr>
           <tr><th>주차</th><td>세대당 1.67대</td></tr>
           <tr><th>견본주택</th><td>대전광역시 서구 관저동 1747번지</td></tr>
@@ -340,10 +340,66 @@
     <h2 class="sec-title">평형 안내</h2>
     <div class="divider"></div>
     <div class="units-tabs">
-      <button class="unit-tab active" onclick="switchUnit('104a',this)">104㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('59a',this)">59㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('59b',this)">59㎡ B</button>
+      <button class="unit-tab" onclick="switchUnit('84a',this)">84㎡ A</button>
+      <button class="unit-tab" onclick="switchUnit('84b',this)">84㎡ B</button>
+            <button class="unit-tab active" onclick="switchUnit('104a',this)">104㎡ A</button>
       <button class="unit-tab" onclick="switchUnit('119a',this)">119㎡ A</button>
     </div>
     
+    <div id="p-59a" class="unit-panel">
+      <div class="unit-img" style="position:relative;"><img src="assets/plan-59a.jpg" alt="59㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">59<span>㎡ A</span></div>
+        <div class="unit-count">47세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 1개</li>
+          <li>4베이 판상형 구조</li>
+          <li>드레스룸 및 알파룸 제공</li>
+          <li>광폭 거실 와이드 리빙</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-59b" class="unit-panel">
+      <div class="unit-img" style="position:relative;"><img src="assets/plan-59b.jpg" alt="59㎡ B 평면도"></div>
+      <div>
+        <div class="unit-size">59<span>㎡ B</span></div>
+        <div class="unit-count">96세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 1개</li>
+          <li>4베이 판상형 구조</li>
+          <li>드레스룸 및 팬트리</li>
+          <li>광폭 거실 와이드 리빙</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-84a" class="unit-panel">
+      <div class="unit-img" style="position:relative;"><img src="assets/plan-84a.jpg" alt="84㎡ A 평면도"></div>
+      <div>
+        <div class="unit-size">84<span>㎡ A</span></div>
+        <div class="unit-count">235세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 2개</li>
+          <li>4.5베이 판상형 구조</li>
+          <li>알파룸 및 올인원 드레스룸</li>
+          <li>분리형 세탁실·팬트리</li>
+        </ul>
+      </div>
+    </div>
+    <div id="p-84b" class="unit-panel">
+      <div class="unit-img" style="position:relative;"><img src="assets/plan-84b.jpg" alt="84㎡ B 평면도"></div>
+      <div>
+        <div class="unit-size">84<span>㎡ B</span></div>
+        <div class="unit-count">215세대</div>
+        <ul class="unit-features">
+          <li>방 3개 / 욕실 2개</li>
+          <li>4베이 판상형 구조</li>
+          <li>알파룸 및 드레스룸</li>
+          <li>와이드 주방 아일랜드</li>
+        </ul>
+      </div>
+    </div>
     <div id="p-104a" class="unit-panel active">
       <div class="unit-img"><img src="assets/plan-104a.jpg" alt="104㎡ A 평면도"></div>
       <div>
@@ -419,6 +475,10 @@
           <label class="form-label">관심 평형</label>
           <select name="type" class="form-input form-select">
             <option value="">선택해주세요</option>
+            <option>59㎡ A (154세대)</option>
+            <option>59㎡ B (132세대)</option>
+            <option>84㎡ A (235세대)</option>
+            <option>84㎡ B (215세대)</option>
             <option>104㎡ A (287세대)</option>
             <option>119㎡ A (71세대)</option>
             <option>상담 후 결정</option>
