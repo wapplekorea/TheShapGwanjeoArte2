@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">if(!wcs_add)var wcs_add={};wcs_add["wa"]="s_3975f6ddf5ad";if(!_nasa)var _nasa={};if(window.wcs){wcs.inflow();wcs_do();}</script>
   <script>
     fetch('https://api.ipify.org?format=json')
       .then(r=>r.json()).then(d=>{
@@ -549,6 +551,7 @@ function switchUnit(id, el) {
       fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:fd})
         .then(function(){
           status.style.color = '#2e7d32';
+          if(window.wcs){if(!wcs_add)var wcs_add={};wcs_add['wa']='s_3975f6ddf5ad';var _conv={};_conv.type='lead';wcs.trans(_conv);}
           status.textContent = '✓ 접수되었습니다. 빠른 시일 내 연락드리겠습니다.';
           form.reset();
           var el = document.getElementById('date-display');
